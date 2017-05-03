@@ -1,0 +1,413 @@
+<div class="site_wrapper">
+    <div class="topbar white topbar-padding">
+        <div class="container">
+            <div class="topbar-left-items">
+                <ul class="toplist toppadding pull-left paddtop1">
+                    <li class="rightl">Complete Profile Builder</li>
+
+                </ul>
+            </div>
+            <!--end left-->
+
+            <div class="topbar-right-items pull-right">
+                <ul class="toplist toppadding">
+                    <button type="button" class="btn btn-default" ng-click="logOutCompanyTemplate()">Logout</button>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clearfix"></div>
+
+
+    <!--end menu-->
+    <div class="clearfix"></div>
+
+    <section>
+        <div class="header-inner two">
+            <div class="inner text-center">
+                <!--<h4 class="title text-white uppercase">We Are Hasta</h4>
+                <h5 class="text-white uppercase">Get Many More Features</h5>-->
+            </div>
+            <!--<div class="overlay bg-opacity-5"></div>-->
+            <img src="assets/img/company.jpg" alt="" class="img-responsive"/> </div>
+    </section>
+    <!-- end header inner -->
+    <div class="clearfix"></div>
+
+    <section>
+        <div class="pagenation-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Company Template form</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <!--<div class="pagenation_links"><a href="index.html">Home</a><i> / </i> <a href="index.html">Pages</a> <i> / </i> Registration form</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section-->
+    <div class="clearfix"></div>
+
+    <section class="sec-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-centered">
+                    <div class="text-box padding-3 border">
+
+                        <div class="smart-forms smart-container wrap-3">
+                            <div class="text-center">
+
+                            </div>
+                            <form  id="account4" name="myForm"  >
+                                <div class="form-body">
+                                    <h1 align="center">Define Company Template</h1>
+                                    <br/>
+                                    <label for="companyName" class="field-label">Company Name</label>
+                                    <div class="frm-row">
+
+                                        <div class="section colm colm12">
+                                            <label class="field prepend-icon">
+                                                <input type="text" name="companyName" id="companyName" class="gui-input"  ng-model="companyName" required >
+                                                <span style="color:red" ng-show="myForm.companyName.$dirty && myForm.companyName.$error.required">Company Name is required</span>
+                                            </label>
+                                        </div><!-- end section -->
+
+
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                    <label for="job_title" class="field-label">Job Title</label>
+                                    <div class="frm-row">
+
+                                        <div class="section colm colm12">
+                                            <label class="field prepend-icon">
+                                                <input type="text" name="job_title" id="job_title" class="gui-input"  ng-model="job_title" required >
+                                                <span style="color:red" ng-show="myForm.job_title.$dirty && myForm.job_title.$error.required">Job Title is required</span>
+                                            </label>
+                                        </div><!-- end section -->
+
+
+
+                                    </div><!-- end frm-row section -->
+
+
+                                    <label for="job_title" class="field-label">No Of Vacancies</label>
+                                    <div class="frm-row">
+
+                                        <div class="section colm colm12">
+                                            <label class="field prepend-icon">
+                                                <input type="number" name="noOfVacancies" id="noOfVacancies" class="gui-input"  ng-model="noOfVacancies" min="1" >
+                                                <span style="color:red" ng-show="myForm.noOfVacancies.$dirty && myForm.noOfVacancies.$error.required">No of Vacancies are required</span>
+                                            </label>
+                                        </div><!-- end section -->
+
+
+
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+
+
+                            <br/>
+
+
+
+
+
+                            <form name="userForm" ng-submit="addRow()" class="form-horizontal" role="form">
+                                <div class="form-body">
+                                    <h3 align="center">Add Required Skills</h3>
+                                    <label for="skill_type" class="field-label">Skill Name</label>
+                                    <div class="frm-row">
+
+                                        <div class="section colm colm12">
+                                            <label class="field prepend-icon">
+
+                                                <input  id="skill_type" class="form-control" list="languages" placeholder="e.g. JavaScript" ng-model="skill_type" required>
+
+                                                <datalist id="languages">
+                                                    <option value="HTML">
+                                                    <option value="CSS">
+                                                    <option value="JavaScript">
+                                                    <option value="Java">
+                                                    <option value="Ruby">
+                                                    <option value="PHP">
+                                                    <option value="Go">
+                                                    <option value="Erlang">
+                                                    <option value="Python">
+                                                    <option value="C">
+                                                    <option value="C#">
+                                                    <option value="C++">
+                                                </datalist>
+
+
+                                            </label>
+                                        </div><!-- end section -->
+
+
+
+                                    </div>
+
+                                    <div class="section">
+                                        <label for="selectedOption" class="field-label">Skill Level </label>
+                                        <label class="field select">
+                                            <select id="selectedOption" name="select" ng-model="selectedOption" ng-options="option as option.text for option in options" required>
+
+                                                -<option value="Expert">Expert</option>
+                                                <option value="Intermediate">Intermediate</option>
+                                                <option value="Beginner">Beginner</option>-
+
+
+
+
+                                            </select>
+                                            <i class="arrow double"></i>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-footer text-center">
+                                        <button type="submit" class="button btn-primary" role="group" ng-disabled="userForm.$invalid">Add Skills</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <section class="sec-padding">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="domain-pricing-table-holder">
+                                            <table class="table-style-2" name="myTable">
+                                                <thead>
+                                                <tr>
+
+
+                                                    <th>Skill Type</th>
+                                                    <th>Skill Level</th>
+                                                    <th>Action</th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+
+                                                <tr ng-repeat="skill in skills">
+
+
+                                                    <td>{{skill.skill_type}}</td>
+                                                    <td>{{skill.selectedOption.text}}</td>
+
+                                                    <td>
+                                                        <input type="button" value="Remove" class="btn btn-primary class btn btn-red-4 btn-round pull-right" ng-click="removeRow(skill.skill_type)"/>
+                                                    </td>
+
+                                                </tbody>
+
+
+
+
+                                                </tr>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <div class="form-footer text-center" >
+                                <button type="submit" class="button btn-primary" ng-click="searchSelectedCandidates();getData()" ng-disabled="job_title == null || noOfVacancies == null || skills.length < 1">Search</button>
+                            </div>
+                            <br/><br/>
+
+
+
+
+
+
+
+
+                            <section class="sec-padding">
+                                <div class="container">
+                                    <h3 align="center">.. Selected Candidates ..</h3>
+                                    <div class="row">
+                                        <div class="domain-pricing-table-holder">
+                                            <table class="table-style-2" name="myTable">
+                                                <thead>
+                                                <tr>
+
+
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Actions</th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+
+                                                <tr ng-repeat="record in records | orderBy: 'firstName': true">
+
+
+                                                    <td>{{record.firstName}}</td>
+                                                    <td>{{record.lastName}}</td>
+
+                                                    <td>
+                                                        <input type="button" value="Send Email" class="btn btn-primary class btn btn-orange-4 btn-round pull-right" ng-click="sendEmail(record.firstName)" />
+                                                        <input type="button" value="View Profile" class="btn btn-primary class btn btn-blue-4 btn-round pull-right" ng-click="viewProfile(record.firstName)"/>
+                                                    </td>
+
+
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </section>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<section class="section-dark sec-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 clearfix">
+                <div class="item-holder">
+                    <h4 class="uppercase footer-title less-mar3">Features</h4>
+                    <div class="footer-title-bottomstrip"></div>
+                    <div class="clearfix"></div>
+                    <div class="image-left"><img src="assets/img/foot1.jpg" alt=""/></div>
+                    <div class="text-box-right">
+                        <h5 class="text-white less-mar3"><a href="#">Clean And Modern</a></h5>
+                        <p>Newly Upgraded Technologies</p>
+
+                    </div>
+                    <div class="divider-line solid dark margin"></div>
+                    <div class="image-left"><img src="assets/img/foot2.jpg" alt=""/></div>
+                    <div class="text-box-right">
+                        <h5 class="text-white less-mar3"><a href="#">Fast And Easy</a></h5>
+                        <p>No More Waiting!</p>
+
+                    </div>
+                </div>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 clearfix">
+                <h4 class="uppercase footer-title less-mar3">Contact Us</h4>
+                <div class="clearfix"></div>
+                <div class="footer-title-bottomstrip"></div>
+                <ul class="usefull-links orange2">
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Join with our Blog</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Join with our Forum</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Friendly Customer Support</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i> Fast Response Time</a></li>
+                    <li class="last"><a href="#"><i class="fa fa-angle-right"></i> Answer Your Questions in No time</a></li>
+                </ul>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 clearfix">
+                <div class="item-holder">
+                    <h4 class="uppercase footer-title less-mar3">All in one</h4>
+                    <div class="clearfix"></div>
+                    <div class="footer-title-bottomstrip"></div>
+                    <div class="newsletter">
+                        <p>Find all of your partners under one roof. All you have to do is just say your requirements. Complete Profile Builder will do the rest</p>
+                        <br />
+                        <!--<form method="get" action="index.html">
+                            <input class="email_input" name="samplees" id="samplees" value="E-mail Address" onFocus="if(this.value == 'E-mail Address') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'E-mail Address';}" type="text">
+                            <input name="" value="Go" class="input_submit orange2" type="submit">
+                        </form>-->
+                    </div>
+                    <!--<div class="margin-top3"></div>
+                    <ul class="social-icons-3 white">
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>-->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--end item-->
+
+            <div class="col-md-3 clearfix">
+                <div class="item-holder">
+                    <h4 class="uppercase footer-title less-mar3">Advantages</h4>
+                    <div class="clearfix"></div>
+                    <div class="footer-title-bottomstrip"></div>
+                    <ul class="usefull-links orange2">
+                        <li><a href="#"><i class="fa fa-angle-right"></i> 24 hour Customer Care</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Instant Support</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Customize your choice</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Define your desires</a></li>
+                        <li class="last"><a href="#"><i class="fa fa-angle-right"></i> Latest Tchnologies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--end item-->
+
+        </div>
+    </div>
+</section>
+<!--end section-->
+<div class="clearfix"></div>
+
+<section class="section-copyrights sec-moreless-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> <span>Copyright © 2017 | Complete Profile Builder | All rights reserved.</span></div>
+        </div>
+    </div>
+</section>
+<!--end section-->
+<div class="clearfix"></div>
+
+<a href="#" class="scrollup"></a><!-- end scroll to top of the page-->
+</div>
+<!--end sitewraper-->
+
+
+
+

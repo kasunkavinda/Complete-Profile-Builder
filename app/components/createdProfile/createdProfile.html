@@ -1,0 +1,226 @@
+
+
+<link rel="stylesheet" href="assets/css/style.css">
+<div id="cv" class="instaFade">
+    <div class="mainDetails">
+        <div id="headshot" class="quickFade">
+            <img src = {{image}} height="100" width="100" > </img>
+        </div>
+
+        <div id="name">
+            <h1 class="quickFade delayTwo">{{name}}</h1>
+
+        </div>
+
+
+        <div class="clear"></div>
+    </div>
+
+
+
+    <div id="mainArea" class="quickFade delayFive">
+        <section>
+            <article>
+                <div class="sectionTitle">
+                    <h1>Personal Profile</h1>
+                </div>
+
+                <div class="sectionContent">
+                    <h4> <li>First Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  : {{firstname}} </li></h4>
+                    <h4><li>Last Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      : {{lastName}} </li></h4>
+                    <h4><li>UserName&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       : {{name}} </li></h4>
+                    <h4> <li>Country&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          : {{country}}</li></h4>
+                    <h4><li>Gender&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        : {{gender}} </li></h4>
+                    <h4><li>E-Mail&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       : {{email}} </li></h4>
+                    <h4> <li>Phone &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       : {{phone}} </li></h4>
+
+                </div>
+            </article>
+            <div class="clear"></div>
+        </section>
+
+
+        <section>
+
+            <div class="sectionTitle">
+                <h1>Academic Qualifications</h1>
+            </div>
+
+            <div class="sectionContent">
+
+                <section class="sec-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="domain-pricing-table-holder">
+                                <table class="table-style-2">
+                                    <thead>
+                                    <tr>
+
+
+                                        <!--<th>Exam Type</th>-->
+
+                                        <th>O/L Subjects</th>
+
+                                        <!--<th>Medium</th>-->
+                                        <th>O/L Result</th>
+
+                                        <!--<th>Action</th>-->
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+
+                                    <tr ng-repeat="olSubjectRate in cores">
+
+
+                                        <!--<td>{{core.type}}</td>-->
+
+                                        <td>{{olSubjectRate.ol}}</td>
+
+                                        <!--<td>{{core.medium}}</td>-->
+                                        <td>{{olSubjectRate.status1}}</td>
+
+                                        <!--<td>
+                                            <input type="button" value="Remove" class="btn btn-primary class btn btn-green-4 btn-round pull-right" ng-click="removeAcademic(core.type)" />
+                                        </td>-->
+                                    </tr>
+                                    </tbody>
+
+                                </table>
+
+                                <table class="table-style-2">
+                                    <thead>
+                                    <tr>
+
+
+                                        <!--<th>Exam Type</th>-->
+
+
+                                        <th>A/L Subjects</th>
+                                        <!--<th>Medium</th>-->
+
+                                        <th>A/L Result</th>
+                                        <!--<th>Action</th>-->
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+
+                                    <tr ng-repeat="alSubjectRate in cores2">
+
+
+                                        <!--<td>{{core.type}}</td>-->
+
+
+                                        <td>{{alSubjectRate.al}}</td>
+                                        <!--<td>{{core.medium}}</td>-->
+
+                                        <td>{{alSubjectRate.status2}}</td>
+                                        <!--<td>
+                                            <input type="button" value="Remove" class="btn btn-primary class btn btn-green-4 btn-round pull-right" ng-click="removeAcademic(core.type)" />
+                                        </td>-->
+                                    </tr>
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+            </div>
+            <div class="clear"></div>
+        </section>
+
+
+
+
+
+        <section>
+            <div class="sectionTitle">
+                <h1>Technical Skills</h1>
+            </div>
+
+            <div class="sectionContent">
+
+
+
+                <section class="sec-padding">
+                    <div class="container">
+                        <div class="domain-pricing-table-holder">
+
+
+
+
+
+                            <table class="table-style-2">
+                                <thead>
+
+                                <tr>
+                                    <th>Skill Name</th>
+                                    <th>Skill Level</th>
+                                    <!--<th>Action</th>-->
+
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr ng-repeat="skill in skills">
+
+                                    <td>{{skill.skillName}}</td>
+                                    <td>{{skill.rate}}</td>
+
+
+                                    <!--<td>
+                                        <input type="button" value="Remove" class="btn btn-primary btn btn-green-4 btn-round pull-right" ng-click="removeSkill(skill.skillName)" />
+                                    </td>
+    -->
+
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="clear"></div>
+    </section>
+    <br/><br/><br/>
+
+        <div class="text-center">
+        <button type="submit" class="button btn-primary" ng-click="pdf()" >Generate PDF</button>
+            <button type="button" class="btn btn-primary" ng-click="goFirst()">Logout</button>
+    </div>
+
+
+
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+</div>
+</div>
+
+
+
+
+

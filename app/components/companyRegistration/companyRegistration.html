@@ -1,0 +1,297 @@
+
+
+<div class="site_wrapper">
+    <div class="topbar white topbar-padding">
+        <div class="container">
+            <div class="topbar-left-items">
+                <ul class="toplist toppadding pull-left paddtop1">
+                    <li class="rightl">Complete Profile Builder</li>
+
+                </ul>
+            </div>
+            <!--end left-->
+
+            <div class="topbar-right-items pull-right">
+                <ul class="toplist toppadding">
+                    <button type="button" class="btn btn-default" ng-click="logOutCompanyRegistration()">Logout</button>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div id="header">
+        <div class="container">
+            <div class="navbar navbar-default yamm">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <!--<a class="navbar-brand"><img src="assets/img/logo1.png" alt=""/></a> </div>-->
+                <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end menu-->
+    <div class="clearfix"></div>
+
+    <section>
+        <div class="header-inner two">
+            <div class="inner text-center">
+                <!--<h4 class="title text-white uppercase">We Are Hasta</h4>
+                <h5 class="text-white uppercase">Get Many More Features</h5>-->
+            </div>
+            <!--<div class="overlay bg-opacity-5"></div>-->
+            <img src="assets/img/company1.jpg" class="img-responsive"/> </div>
+    </section>
+    <!-- end header inner -->
+    <div class="clearfix"></div>
+
+    <section>
+
+    </section>
+    <!--end section-->
+    <div class="clearfix"></div>
+
+    <section class="sec-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-centered">
+                    <div class="text-box padding-3 border">
+
+                        <div class="smart-forms smart-container wrap-3">
+
+                            <h3>Company Registration Form</h3>
+
+                            <form   name="myForm" ng-submit="submitForm(myForm.$valid)" novalidate>
+                                <div class="form-body">
+
+                                    <label for="uname" class="field-label">Username:</label>
+                                    <div class="frm-row">
+
+                                        <div class="section colm colm12">
+                                            <label class="field prepend-icon">
+                                                <input type="text"  name="uname" id="uname"  class="gui-input" placeholder="User Name" ng-model="com_userName"  data-ng-blur="getCompanyUserName()" required />
+                                                <span style="color:red" ng-show="myForm.uname.$dirty && myForm.uname.$error.required">Username is required</span>
+
+                                            </label>
+                                        </div><!-- end section -->
+
+
+
+                                    </div><!-- end frm-row section -->
+
+
+
+                                    <div class="section">
+                                        <label for="pswrd" class="field-label">Create a password</label>
+                                        <label class="field prepend-icon">
+                                            <input type="password" name="pswrd" id="pswrd" class="gui-input" ng-model="pswrd" placeholder="Create Password" ng-minlength="5"  ng-maxlength="14" required>
+                                            <span style="color:red" ng-show="myForm.pswrd.$dirty && myForm.pswrd.$error.required">Password is required</span>
+                                            <span style="color:red" ng-show="myForm.pswrd.$dirty && myForm.pswrd.$error.password">Invalid password</span>
+                                            <span style="color:red" ng-show="myForm.pswrd.$dirty && myForm.pswrd.$error.minlength">Too short</span>
+                                            <span style="color:red" ng-show="myForm.pswrd.$dirty && myForm.pswrd.$error.maxlength">Too long</span>
+                                        </label>
+                                    </div><!-- end section -->
+
+                                    <div class="section">
+                                        <label for="com_UserPassword" class="field-label">Confirm your password</label>
+                                        <label class="field prepend-icon">
+                                            <input type="password" name="com_UserPassword" id="com_UserPassword"  placeholder="Confirm Password" class="gui-input" ng-model="com_UserPassword" required>
+                                            <div ng-show="(myForm.pswrd.$dirty && myForm.com_UserPassword.$dirty) && (pswrd != com_UserPassword)">
+                                                <span style="color:red">Password is not equal</span></div>
+
+
+                                        </label>
+                                    </div>
+                                    <div class="section"  ng-class="{ 'has-error' : myForm.email.$invalid && !myForm.email.$pristine }">
+                                        <label for="email" class="field-label">Email</label>
+                                        <label class="field prepend-icon">
+                                            <input type="email" name="email" id="email" class="gui-input" ng-model="com_email"  placeholder="example@abc.com" required>
+                                            <span ng-show="myForm.email.$invalid && !myForm.email.$pristine" class="help-block">Enter a valid email</span>
+                                        </label>
+                                    </div>
+
+
+
+
+                                    <div class="section" >
+                                        <label for="email" class="field-label">Company Name</label>
+                                        <label class="field prepend-icon">
+                                            <input type="text" name="cname" id="cname" class="gui-input" ng-model="com_CompanyName"  placeholder="Company Name" required>
+                                            <span style="color:red" ng-show="myForm.cname.$dirty && myForm.cname.$error.required">Company Name is required</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="section" >
+                                        <label for="location" class="field-label">Location</label>
+                                        <label class="field prepend-icon">
+                                            <input type="text" name="location" id="location" class="gui-input" ng-model="com_location"  placeholder="Company Location" required>
+                                            <span style="color:red" ng-show="myForm.location.$dirty && myForm.location.$error.required">Company Location is required</span>
+                                        </label>
+                                    </div>
+                                    <div class="section" ng-class="{'has-error': myForm.phone.$error.number && !myForm.phone.$pristine }">
+                                        <label for="phone" class="field-label">Telephone No</label>
+                                        <label class="field prepend-icon">
+                                            <input type="number"
+                                                   class="gui-input"
+                                                   ng-minlength="10"
+                                                   ng-maxlength="10"
+                                                   id="phone"
+                                                   name="phone"
+                                                   placeholder="Telephone No"
+                                                   ng-model="com_telNo"
+                                                   ng-required="true">
+                                            <span style="color:red" class="help-block" ng-show="((myForm.phone.$error.minlength ||myForm.phone.$error.maxlength) && myForm.phone.$dirty) ">
+                                             phone number should be 10 digits
+                                             </span>
+
+                                        </label>
+                                    </div>
+
+
+                                </div><!-- end .form-body section -->
+                                <!-- end .form-footer section -->
+                                <div class="form-footer text-center" >
+                                    <button type="submit" class="button btn-primary"ng-click="addToDataBase(); givePopUp()"  ng-disabled="myForm.$invalid || disable_buttons">Submit</button>
+                                </div>
+                                <div class="form-footer text-center" >
+                                    <button type="submit" class="button btn-primary" ng-click="goTemplate()" ng-disabled="!disable_buttons" >Create Template</button>
+                                </div>
+                            </form>
+
+
+
+
+
+
+                        </div></div></div>
+
+            </div>
+            <!--end item-->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="clearfix"></div>
+
+        <section class="section-dark sec-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 clearfix">
+                        <div class="item-holder">
+                            <h4 class="uppercase footer-title less-mar3">Features</h4>
+                            <div class="footer-title-bottomstrip"></div>
+                            <div class="clearfix"></div>
+                            <div class="image-left"><img src="assets/img/foot1.jpg" alt=""/></div>
+                            <div class="text-box-right">
+                                <h5 class="text-white less-mar3"><a href="#">Clean And Modern</a></h5>
+                                <p>Newly Upgraded Technologies</p>
+
+                            </div>
+                            <div class="divider-line solid dark margin"></div>
+                            <div class="image-left"><img src="assets/img/foot2.jpg" alt=""/></div>
+                            <div class="text-box-right">
+                                <h5 class="text-white less-mar3"><a href="#">Fast And Easy</a></h5>
+                                <p>No More Waiting!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--end item-->
+
+                    <div class="col-md-3 clearfix">
+                        <h4 class="uppercase footer-title less-mar3">Contact Us</h4>
+                        <div class="clearfix"></div>
+                        <div class="footer-title-bottomstrip"></div>
+                        <ul class="usefull-links orange2">
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Join with our Blog</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Join with our Forum</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Friendly Customer Support</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Fast Response Time</a></li>
+                            <li class="last"><a href="#"><i class="fa fa-angle-right"></i> Answer Your Questions in No time</a></li>
+                        </ul>
+                    </div>
+                    <!--end item-->
+
+                    <div class="col-md-3 clearfix">
+                        <div class="item-holder">
+                            <h4 class="uppercase footer-title less-mar3">All in one</h4>
+                            <div class="clearfix"></div>
+                            <div class="footer-title-bottomstrip"></div>
+                            <div class="newsletter">
+                                <p>Find all of your partners under one roof. All you have to do is just say your requirements. Complete Profile Builder will do the rest</p>
+                                <br />
+                                <!--<form method="get" action="index.html">
+                                    <input class="email_input" name="samplees" id="samplees" value="E-mail Address" onFocus="if(this.value == 'E-mail Address') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'E-mail Address';}" type="text">
+                                    <input name="" value="Go" class="input_submit orange2" type="submit">
+                                </form>-->
+                            </div>
+                            <!--<div class="margin-top3"></div>
+                            <ul class="social-icons-3 white">
+                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>-->
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!--end item-->
+
+                    <div class="col-md-3 clearfix">
+                        <div class="item-holder">
+                            <h4 class="uppercase footer-title less-mar3">Advantages</h4>
+                            <div class="clearfix"></div>
+                            <div class="footer-title-bottomstrip"></div>
+                            <ul class="usefull-links orange2">
+                                <li><a href="#"><i class="fa fa-angle-right"></i> 24 hour Customer Care</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Instant Support</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Customize your choice</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Define your desires</a></li>
+                                <li class="last"><a href="#"><i class="fa fa-angle-right"></i> Latest Tchnologies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--end item-->
+
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        <section class="section-copyrights sec-moreless-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"> <span>Copyright © 2017 | Complete Profile Builder | All rights reserved.</span></div>
+                </div>
+            </div>
+        </section>
+        <!--end section-->
+        <div class="clearfix"></div>
+
+        <a href="#" class="scrollup"></a><!-- end scroll to top of the page-->
+    </div>
+    <!--end sitewraper-->
+
+
+
+
+
+
+
